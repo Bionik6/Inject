@@ -5,12 +5,13 @@ Hot reloading workflow helper that enables you to save hours of time each week, 
 
 
 https://user-images.githubusercontent.com/26660989/161756368-b150bc25-b66f-4822-86ee-2e4aed713932.mp4
+https://dsc.cloud/47163e/Inject_Hot_Reload_Demo.mp4
 
 
 
 [Read detailed article about this](https://merowing.info/2022/04/hot-reloading-in-swift/)
 
-The heavy lifting is done by the amazing [InjectionForXcode](https://github.com/johnno1962/InjectionIII). This library is just a think wrapper to provide the best developer experience possible while requiring minimum effort. 
+The heavy lifting is done by the amazing [InjectionForXcode](https://github.com/johnno1962/InjectionIII). This library is just a think wrapper to provide the best developer experience possible while requiring minimum effort.
 
 I've been using it for years.
 
@@ -19,12 +20,12 @@ Hot reloading is a technique allowing you to get rid of compiling your whole app
 
 This makes you significantly more productive by reducing the time you spend waiting for apps to rebuild, restart, re-navigate to the previous location where you were in the app itself, re-produce the data you need.
 
-This can save you literal hours off development time, **each day**! 
+This can save you literal hours off development time, **each day**!
 
 ## Does it add manual overhead to my workflows?
 Once you configured your project initially, it's practically free.
 
-You don’t need to add conditional compilation or remove `Inject` code from your applications for production, it's already designed to behave as no-op inlined code that will get stripped by LLVM in non-debug builds. 
+You don’t need to add conditional compilation or remove `Inject` code from your applications for production, it's already designed to behave as no-op inlined code that will get stripped by LLVM in non-debug builds.
 
 Which means that you can enable it once per view and keep using it for years to come.
 
@@ -67,7 +68,7 @@ If anyone in your project wants to use injection, they only need to:
 ```
 
 ## Workflow integration
-You can either add `import Inject` in individual files in your project or use 
+You can either add `import Inject` in individual files in your project or use
 `@_exported import Inject` in your project target to have it automatically available in all its files.
 
 #### **SwiftUI**
@@ -85,7 +86,7 @@ Inject.animation = .interactiveSpring()
 ```
 
 ####  **UIKit / AppKit**
-For standard imperative UI frameworks we need a way to clean-up state between code injection phases. 
+For standard imperative UI frameworks we need a way to clean-up state between code injection phases.
 
 I create the concept of **Hosts** that work really well in that context, there are 2:
 
